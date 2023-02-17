@@ -19,6 +19,7 @@ router.get('/patientlogin', (req, res) => {
     data.NODE_ENV = process.env.NODE_ENV;
     res.render('patientlogin', { data });
 });
+
 router.get('/patienthome', (req, res) => { })
 router.get('/patienthome/book/:patientid', (req, res) => {
 
@@ -37,3 +38,5 @@ router.post('/patienthome/book/:patientid', (req, res) => {
 router.post('/patienthome/book/:patientid/:disease/:doctorid', (req, res) => {
 
 })
+
+module.exports = router

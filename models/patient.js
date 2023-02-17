@@ -8,15 +8,17 @@ const patientSchema = new mongoose.Schema({
         default: 'patient',
     },
     name: String,
-    dob: String,
-    phone: String,
+    //change String -> Date
+    dob: Date,
+    //change String -> Number
+    phone: Number,
     //address: String,
     //dividing address into multiple fields
     nation: String,
     state: String,
     city: String,
     password: String,
-    date: String,
+    // date: String,
 });
 
 patientSchema.plugin(passportLocalMongoose);
