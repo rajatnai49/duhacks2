@@ -1,14 +1,23 @@
 const express = require("express")
+const bodyParser = require('body-parser');
 var cors = require("cors")
 const mongoose = require("mongoose")
 const app = express()
-const db = require('./database/connection')
+
+app.use(bodyParser.json());
 app.use(cors())
-db()
-app.set('view-engine', 'ejs')
-app.use(express.urlencoded({ extended: false }))
+// Routes
 app.get("/", (req, res) => {
-    res.render('/views/login.js')
+    res.send("We are live!");
+});
+
+const db = require('./database/connection')
+db()
+
+const DoctorRoutes = require('./routes/docter');
+app.use(DoctorRoutes)
+app.use("/", () => {
+    console.log("Middleware Running");
 });
 
 app.listen(3000, () => {

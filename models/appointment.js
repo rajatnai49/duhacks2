@@ -1,14 +1,35 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
 
-const appointmentSchema = new Schema({
-    patientId: { type: Schema.Types.ObjectId, ref: 'Patient', required: true },
-    doctorId: { type: Schema.Types.ObjectId, ref: 'Doctor', required: true },
-    startTime: { type: Date, required: true },
-    endTime: { type: Date, required: true },
-    isVideoCall: { type: Boolean, required: true },
-    isCancelled: { type: Boolean, default: false }
-})
-const Appointment = mongoose.model('Appointment', appointmentSchema);
+const AppointmentSchema = new mongoose.Schema({
+    PatientId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Patient',
+    },
+    DoctorId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Doctor',
+    },
+    PrescriptionId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Prescription',
+        default: null,
+    },
+    AppointmentDate: {
+        type: String,
+        default: 'none',
+    },
+    Disease: {
+        type: String,
+        default: 'none',
+    },
+    Status: {
+        type: String,
+        default: 'none',
+    },
+    SerialNumber: {
+        type: Number,
+        default: null,
+    },
+});
 
-module.exports = Appointment;
+module.exports = mongoose.model('Appointment', AppointmentSchema);
