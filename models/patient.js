@@ -10,7 +10,11 @@ const patientSchema = new mongoose.Schema({
     name: String,
     dob: String,
     phone: String,
-    address: String,
+    //address: String,
+    //dividing address into multiple fields
+    nation: String,
+    state: String,
+    city: String,
     password: String,
     date: String,
 });
