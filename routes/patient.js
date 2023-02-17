@@ -9,14 +9,12 @@ const router = express.Router()
 router.get('/patientregistration', (req, res) => {
     const data = {};
     data.user = req.user;
-    data.NODE_ENV = process.env.NODE_ENV;
     res.render('patientregistration', { data });
 });
 
 router.get('/patientlogin', (req, res) => {
     const data = {};
     data.user = req.user;
-    data.NODE_ENV = process.env.NODE_ENV;
     res.render('patientlogin', { data });
 });
 
