@@ -11,7 +11,7 @@ const PatientRoutes = require('./routes/patient');
 const IndexRoutes = require('./routes/index');
 
 const app = express()
-
+app.use(express.static("public"));
 // db config
 const db = require('./database/connection')
 db()
