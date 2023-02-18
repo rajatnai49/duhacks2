@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- data.user -->
 
 <head>
     <%- include('header'); -%>
@@ -14,6 +15,7 @@
         </nav>
     </div>
     <div class="container">
+        <!-- <h1><%= data.user.name %></h1> -->
         <div class="d-flex item item-1">
             <h6>
                 Book Appointment with doctor you want
@@ -23,9 +25,9 @@
                 Specialist
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/ent">ENT</a>
+                <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/lungs">Lungs</a>
+                <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/hearts">Hearts</a>
             </div>
         </div>
         <div class="item item-2">

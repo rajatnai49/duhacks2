@@ -3,7 +3,7 @@ const passport = require('passport');
 const Appointment = require('../models/appointment')
 const report = require('../models/prescription')
 const Doctor = require('../models/doctor')
-const { isLoggedIn } = require('./functions')
+const { isLoggedIn } = require('./helper')
 
 const router = express.Router()
 
@@ -57,6 +57,7 @@ router.post(
 // });
 
 // PUT
+
 router.put('/doctorhome/:id/edit', (req, res) => {
     Doctor.findByIdAndUpdate(req.params.id, req.body, req.body, (err, item) => {
         if (err) {

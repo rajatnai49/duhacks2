@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <%- include('header.ejs', {data: data }); %>
+        <br />
+        <div class="text-center">
+            <u>
+                <h2>SELECT A DOCTOR</h2>
+            </u>
+        </div>
+        <br />
+        <div>
+            <ol style="padding-left: 5rem;">
+                <% data.doctor.forEach(function(item){ %>
+                    <div>
+                        <li style="font-size:1.5rem">
+                            <h4>Doctor Name : <%= item.name %>
+                            </h4>
+                            <h4>Doctor Address : <%= item.address %>
+                            </h4>
+                            <h4>Phone Number : <%= item.phone %>
+                            </h4>
+                            <a href="/patienthome/book/<%= data.patientid %>/<%= data.patientdisease %>/<%= item._id %> "
+                                class="btn btn-primary">SELECT DOCTOR</a>
+
+                        </li>
+                        <br />
+                    </div>
+                    <% }); %>
+            </ol>
+        </div>
+
+        <%- include('footer.ejs'); %>
+
+</body>
+
+</html>

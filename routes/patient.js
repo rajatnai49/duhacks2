@@ -91,19 +91,48 @@ router.get('/patienthome', (req, res) => {
 
 })
 // +Add isAuthorizedPatient
-router.get('/patienthome/book/:patientid', (req, res) => {
-    const data = {}
-    data.user = req.user;
-    data.patientid = req.params.patientid;
-    res.render('appointmentbooking1', { data })
-})
-router.get('/patienthome/book/:patientid/:disease', (req, res) => {
 
+router.get('/patienthome/book/:patientid/:disease', (req, res) => {
+    const docpromise = new Promise((resolve, reject) => {
+        Doctor
+            .find({ specialization: req.params.disease })
+            .exec((err, item) => {
+                if (err) {
+                    console.log('error in updating patient data');
+                    reject(err);
+                }
+                else {
+                    resolve(item)
+                }
+            })
+    })
+    docpromise
+        .then((result) => {
+            const data = {}
+            data.user = req.user
+            data.patientid = req.params.patientid
+            data.patientdisease = req.params.disease
+            data.doctor = result
+            console.log(result)
+            res.render('appointmentbooking1', { data })
+        })
+        .catch((err) => {
+            console.log('appointment1 error')
+        })
 })
 router.get('/patienthome/book/:patientid/:disease/:doctorid', (req, res) => {
+    const data = {}
+    data.user = req.user
+    data.patientid = req.params.patientid
+    data.disease = req.params.disease
+    data.doctorid = req.params.doctorid
+    res.render('appointmentbooking2', { data })
+}
+);
+router.post('/patienthome/book/:patientid/:disease/:doctorid', (req, res) => {
 
-})
-
+}
+);
 // POST
 router.post('/patientlogin',
     passport.authenticate('patientlocal', {
