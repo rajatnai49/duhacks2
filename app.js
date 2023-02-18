@@ -5,10 +5,12 @@ const LocalStrategy = require('passport-local')
 const passport = require('passport');
 const Patient = require('./models/patient');
 const Doctor = require('./models/doctor');
-const session = require('cookie-session');
+// const session = require('cookie-session');
 const DoctorRoutes = require('./routes/docter');
 const PatientRoutes = require('./routes/patient');
 const IndexRoutes = require('./routes/index');
+const session = require("express-session");
+
 
 const app = express()
 app.use(express.static("public"));
@@ -34,6 +36,8 @@ app.use(passport.session());
 
 passport.use('doctorlocal', new LocalStrategy(Doctor.authenticate()));
 passport.use('patientlocal', new LocalStrategy(Patient.authenticate()));
+passport.serializeUser(Patient.serializeUser());
+passport.deserializeUser(Patient.deserializeUser());
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -54,6 +58,11 @@ app.use(IndexRoutes)
 app.use(PatientRoutes)
 app.use(DoctorRoutes)
 
-app.listen(3000, () => {
-    console.log("Server started at 3000")
-})
+
+app.listen(process.env.PORT || 3000, function (err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Server Started At Port 3000");
+    }
+});

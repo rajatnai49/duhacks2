@@ -3,42 +3,88 @@
 
 <head>
     <%-include('header');-%>
-        <title>Document</title>
+        <link rel="stylesheet" href="css/signup.css">
+        <title>Register | Patient</title>
 </head>
 
 <body>
-    <form action="patientregistration" method="POST">
-        <div>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+    <form method="POST" action="patientregistration" id="login-form" class="login-form" autocomplete="off" role="main">
+        <h1 class="a11y-hidden">Sign Up form</h1>
+        <div class="d-flex flex-row flex-wrap">
+            <div class="p-2">
+                <label class="label-username">
+                    <input type="email" class="text" name="username" placeholder="Username" tabindex="1" required>
+                    <span class="required">Email</span>
+                </label>
+            </div>
+            <div class="p-2">
+                <label class="label-name">
+                    <input type="name" class="text" name="name" placeholder="name" tabindex="1" required>
+                    <span class="required">Name</span>
+                </label>
+            </div>
         </div>
-        <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+        <div class="d-flex flex-row flex-wrap">
+            <div class="p-2">
+                <label class="label-phonenumber">
+                    <input type="number" class="text" name="phoneno" placeholder="Phone Number" tabindex="1" required>
+                    <span class="required">Phone Number</span>
+                </label>
+            </div>
+            <div class="p-2">
+                <label class="label-D.O.B">
+                    <input type="Date" class="text" name="dob" placeholder="Date of Birth" tabindex="1" required>
+                    <span class="required">D.O.B</span>
+                </label>
+            </div>
         </div>
-        <div>
-            <label for="dob">Date of birth</label>
-            <input type="date" id="dob" name="dob" required>
+        <div class="d-flex flex-row flex-wrap">
+            <div class="p-2">
+                <label class="label-State">
+                    <input type="state" class="text" name="state" placeholder="State" tabindex="1" required>
+                    <span class="required">State</span>
+                </label>
+            </div>
+            <div class="p-2">
+                <label class="label-city">
+                    <input type="City" class="text" name="city" placeholder="City" tabindex="1" required>
+                    <span class="required">City</span>
+                </label>
+            </div>
         </div>
-        <div>
-            <label for="phoneno">Phone no.</label>
-            <input type="number" id="phoneno" name="phoneno" required>
+        <div class="d-flex flex-column align-items-center flex-wrap">
+            <input type="checkbox" name="show-password" class="show-password a11y-hidden" id="show-password"
+                tabindex="3" />
+            <label class="label-show-password" for="show-password">
+                <span>Show Password</span>
+            </label>
+            <div>
+                <label class="label-password">
+                    <input type="text" class="text" name="password" placeholder="Password" tabindex="2" required />
+                    <span class="required">Password</span>
+                </label>
+            </div>
+            <input type="submit" value="Register" />
         </div>
-        <div>
-            <label for="state">State</label>
-            <input type="text" id="state" name="state" required>
+
+        <div class="email">
+            <a href="patientlogin">Already have account?</a>
         </div>
-        <div>
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" required>
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">register</button>
+
+        <figure aria-hidden="true">
+            <div class="person-body"></div>
+            <div class="neck skin"></div>
+            <div class="head skin">
+                <div class="eyes"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="hair"></div>
+            <div class="ears"></div>
+            <div class="shirt-1"></div>
+            <div class="shirt-2"></div>
+        </figure>
     </form>
-    <a href="patientlogin">login</a>
+
     <%-include('footer');-%>
 </body>
 

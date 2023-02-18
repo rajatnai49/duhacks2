@@ -4,7 +4,7 @@
 <head>
     <%-include('header');-%>
         <link rel="stylesheet" href="css/index.css">
-        <title>home | medigo</title>
+        <title>Home | medigo</title>
 </head>
 
 <body>
@@ -13,21 +13,35 @@
             <a class="navbar-brand" href="#">mediGo</a>
         </nav>
     </div>
-    <br>
-    <br>
-    <div class="d-flex flex-column align-items-center">
+    <div class="homediv d-flex flex-column align-items-center flex-wrap">
         <div class="p-2">
-            <h3>Which role side you want to go!?</h3>
+            <h3>Which status suits you best!?</h3>
         </div>
         <div class="p-2 d-flex flex-row">
             <form action="doctorlogin" method="GET">
                 <button type="submit" class="btn btn-outline-success btn-lg">Doctor</button>
             </form>
             <form action="patientlogin" method="GET">
-                <button type="submit" class="btn btn-outline-dark btn-lg">Patient</button>
+                <button type="submit" class="btn btn-outline-info btn-lg">Patient</button>
             </form>
         </div>
     </div>
+
+    <div class="homediv d-flex flex-column align-items-center flex-wrap">
+        <div class="p-2">
+            <h3>Our Studies!</h3>
+        </div>
+        <div class="p-2 d-flex flex-row">
+            <form action="" method="GET">
+                <button type="submit" class="btn btn-outline-success btn-lg">Dia</button>
+            </form>
+            <form action="" method="GET">
+                <button type="submit" class="btn btn-outline-info btn-lg">Maleria</button>
+            </form>
+        </div>
+    </div>
+
+
     <%-include('footer');-%>
 </body>
 

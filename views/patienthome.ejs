@@ -2,12 +2,40 @@
 <html lang="en">
 
 <head>
-    <% -include('header');- %>
-        <title>Patient Home</title>
+    <%- include('header'); -%>
+        <link rel="stylesheet" href="css/index.css">
+        <title>Home | Patient</title>
 </head>
 
 <body>
-    <% -include('footer');- %>
+    <div class="d-flex justify-content-center ">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">mediGo</a>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="d-flex item item-1">
+            <h6>
+                Book Appointment with doctor you want
+            </h6>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Specialist
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        <div class="item item-2">
+            <div class="p-2 patientdivs">
+                current appo
+            </div>
+        </div>
+    </div>
+    <a href="/patientlogout">logout</a>
+    <%- include('footer'); -%>
 </body>
 
 </html>

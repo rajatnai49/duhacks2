@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     data.NODE_ENV = process.env.NODE_ENV;
     res.render('home', { data });
 });
-router.get('/logout', (req, res) => {
+router.get('/patientlogout', (req, res) => {
     req.logout();
     res.redirect('/');
 });
