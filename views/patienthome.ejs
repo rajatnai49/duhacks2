@@ -14,29 +14,46 @@
             <a class="navbar-brand" href="#">mediGo</a>
         </nav>
     </div>
-    <div class="container">
-        <!-- <h1><%= data.user.name %></h1> -->
-        <div class="d-flex item item-1">
-            <h6>
-                Book Appointment with doctor you want
+
+    <div class="d-flex flex-column align-items-center justify-content-evenly flex-warp">
+        <div class="p-2">
+            <h6 class="name">
+                <%= "Hello, " + data.user.name + " are you feeling well?" %>
             </h6>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Specialist
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/ent">ENT</a>
-                <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/lungs">Lungs</a>
-                <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/hearts">Hearts</a>
-            </div>
         </div>
-        <div class="item item-2">
-            <div class="p-2 patientdivs">
-                current appo
+        <div class="p-2 container">
+            <div class="item">
+                <h6>
+                    Book Appointment with doctor you want
+                </h6>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Specialist
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/ent">ENT</a>
+                        <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/lungs">Lungs</a>
+                        <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/hearts">Hearts</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <h6>All Appointment</h6>
+                <div>
+                    <form action="patienthome/show">
+                        <button type="submit" class="btn btn-secondary">Show</button>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
-    <a href="/patientlogout">logout</a>
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary" href="/patientlogout" role="button">Logout</a>
+    </div>
+
     <%- include('footer'); -%>
 </body>
 
