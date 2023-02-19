@@ -6,7 +6,35 @@ const Doctor = require('../models/doctor')
 const { isLoggedIn } = require('./helper')
 
 const router = express.Router()
+router.get('/doctorregistration', (req, res) => {
+    const data = {};
+    data.user = req.user;
+    res.render('doctorregistration', { data });
+})
+router.post('/doctorregistration', (req, res) => {
+    const temp = new Doctor({
+        username: req.body.username,
+        usertype: req.body.usertype,
+        name: req.body.name,
+        phone: req.body.phone,
+        specialization: req.body.specialization,
+        address: req.body.address,
+    });
 
+    Doctor.register(temp, req.body.password, (err, item) => {
+        if (err) {
+            console.log(err);
+            const data = {};
+            data.user = req.user;
+            console.log(item);
+            res.render('doctorregistration', { data });
+        }
+        passport.authenticate('doctorlocal')(req, res, () => {
+            res.send("created")
+            // res.redirect('/doctorhome');
+        });
+    });
+});
 router.get('/doctorlogin', (req, res) => {
     const data = {}
     data.user = req.user

@@ -17,10 +17,7 @@
                         <li style="font-size:1.5rem">
                             <h4>Doctor Name : <%= item.name %>
                             </h4>
-                            <h4>Doctor Address : <%= item.address %>
-                            </h4>
-                            <h4>Phone Number : <%= item.phone %>
-                            </h4>
+
                             <form
                                 action="/patienthome/book/<%= data.patientid %>/<%= data.patientdisease %>/<%= item._id %>"
                                 method="post">

@@ -5,6 +5,10 @@
 <head>
     <%- include('header', {data:data}); -%>
         <style>
+            body {
+                background-color: #C5CFE4;
+            }
+
             button {
                 margin: 20px;
             }
@@ -54,7 +58,7 @@
 <body>
     <div class="d-flex justify-content-center ">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">mediGo</a>
+            <a class="navbar-brand" href="">mediGo</a>
         </nav>
     </div>
 
@@ -75,9 +79,10 @@
                         Specialist
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/ent">ENT</a>
-                        <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/lungs">Lungs</a>
-                        <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/hearts">Hearts</a>
+                        <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/Dentist">Dentist</a>
+                        <a class="dropdown-item"
+                            href="/patienthome/book/<%= data.user._id %>/Cardiologist">Cardiologist</a>
+                        <a class="dropdown-item" href="/patienthome/book/<%= data.user._id %>/Oncologist">Oncologist</a>
                     </div>
                 </div>
             </div>
