@@ -2,12 +2,35 @@
 <html lang="en">
 
 <head>
-
-    <title>Doctor</title>
+    <%-include('header');-%>
+        <title>Doctor</title>
 </head>
 
 <body>
-    Hi there,
+    <%- include({data: data}); -%>
+        <div class="d-flex justify-content-center ">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">mediGo</a>
+            </nav>
+        </div>
+
+        <div>
+            <ol style="padding-left: 5rem;">
+                <!-- <% data.forEach(function(item){ %>
+                <div>
+                    <li style="font-size:1.5rem">
+                        <h4>Patient Name : <%= item.name %>
+                        </h4>
+                        <h4>Appointment Date : <%= item.date %>
+                        </h4>
+                    </li>
+                    <br />
+                </div>
+                <% }); %> -->
+            </ol>
+        </div>
+
+        <%-include('footer');-%>
 </body>
 
 </html>
