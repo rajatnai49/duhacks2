@@ -21,9 +21,12 @@
                             </h4>
                             <h4>Phone Number : <%= item.phone %>
                             </h4>
-                            <a href="/patienthome/book/<%= data.patientid %>/<%= data.patientdisease %>/<%= item._id %> "
-                                class="btn btn-primary">SELECT DOCTOR</a>
-
+                            <form
+                                action="/patienthome/book/<%= data.patientid %>/<%= data.patientdisease %>/<%= item._id %>"
+                                method="post">
+                                Date: <input type="date" name="date">
+                                <button type="submit">Book</button>
+                            </form>
                         </li>
                         <br />
                     </div>

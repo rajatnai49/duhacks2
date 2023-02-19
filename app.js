@@ -58,6 +58,21 @@ app.use(IndexRoutes)
 app.use(PatientRoutes)
 app.use(DoctorRoutes)
 
+app.get('/cancer', (req, res) => {
+    res.render("study/cancer");
+})
+
+app.get('/diabetes', (req, res) => {
+    res.render("study/diabetes");
+})
+
+app.get('/tuberculosis', (req, res) => {
+    res.render("study/tuberculosis");
+})
+
+app.get('/malaria', (req, res) => {
+    res.render("study/malaria");
+})
 
 app.listen(process.env.PORT || 3000, function (err) {
     if (err) {

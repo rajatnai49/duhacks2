@@ -14,8 +14,43 @@ router.get('/doctorlogin', (req, res) => {
 })
 
 router.get('/doctorhome', (req, res) => {
-    res.render('doctorhome')
+    const appointmentarray = [];
+    const data = {};
+    const SortdoctorPromise = new Promise((resolve, reject) => {
+        Appointment.find()
+            .populate('PatientId DoctorId')
+            .exec((err, appointments) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(appointments);
+                }
+            });
+    });
+    SortdoctorPromise.then((result) => {
+        result.forEach((item) => {
+            const obj = {}
+            obj.PatientId = item.PatientId;
+            obj.name = item.PatientId.name;
+            obj.email = item.PatientId.username;
+            obj.AppointmentDate = item.AppointmentDate;
+            appointmentarray.push(obj);
+        });
+    }).catch((error) => {
+        console.log(`Error From promise 1 a) ${error}`);
+    });
+    Promise.all([SortdoctorPromise])
+        .then((result) => {
+            data.appointmentarray = appointmentarray;
+            data.user = req.user;
+            console.log(data);
+            res.render('doctorhome', { data });
+        })
+        .catch((error) => {
+            console.log(`Error From promise 1 c) ${error}`);
+        });
 })
+
 
 // POST
 router.post(

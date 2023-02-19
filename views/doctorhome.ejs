@@ -2,35 +2,39 @@
 <html lang="en">
 
 <head>
-    <%-include('header');-%>
+    <%-include('header',{data: data});-%>
         <title>Doctor</title>
 </head>
 
 <body>
-    <%- include({data: data}); -%>
-        <div class="d-flex justify-content-center ">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">mediGo</a>
-            </nav>
-        </div>
+    <div class="d-flex justify-content-center ">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">mediGo</a>
+        </nav>
+    </div>
 
-        <div>
-            <ol style="padding-left: 5rem;">
-                <!-- <% data.forEach(function(item){ %>
-                <div>
-                    <li style="font-size:1.5rem">
-                        <h4>Patient Name : <%= item.name %>
-                        </h4>
-                        <h4>Appointment Date : <%= item.date %>
-                        </h4>
-                    </li>
-                    <br />
-                </div>
-                <% }); %> -->
-            </ol>
+    <div class="d-flex flex-column align-items-center">
+        <div class="p-2">
+            <h6 class="name">
+                <%= "Hello, doctor here is your appointment schedule?" %>
+            </h6>
         </div>
+        <div id="appointment">
+            <ul>
+                <% for(let i=0;i<data.appointmentarray.length;i++) {%>
+                    <ul>Patient name:<%= data.appointmentarray[i].name %>
+                            <li>email:<%= data.appointmentarray[i].email %>
+                            <li>Appointment date:<%= data.appointmentarray[i].AppointmentDate %>
+                            </li>
+                            </li>
+                    </ul>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
 
-        <%-include('footer');-%>
+
+    <%-include('footer');-%>
 </body>
 
 </html>

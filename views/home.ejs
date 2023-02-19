@@ -8,38 +8,214 @@
 </head>
 
 <body>
-    <div class="d-flex justify-content-center ">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">mediGo</a>
-        </nav>
-    </div>
-    <div class="homediv d-flex flex-column align-items-center flex-wrap">
-        <div class="p-2">
-            <h3>Which status suits you best!?</h3>
+    <div class="image">
+        <div class="d-flex justify-content-center ">
+            <!-- <nav class="navbar navbar-expand-lg navbar-light"> -->
+            <div class="container1">
+                <div class="center">
+                    <br><br><br>
+                    <h1 class="apple">mediGo</h1>
+                    <!-- <a class="navbar-brand" href="#">mediGo</a> -->
+                    <!-- </nav> -->
+                </div>
+            </div>
         </div>
-        <div class="p-2 d-flex flex-row">
-            <form action="doctorlogin" method="GET">
-                <button type="submit" class="btn btn-outline-success btn-lg">Doctor</button>
-            </form>
-            <form action="patientlogin" method="GET">
-                <button type="submit" class="btn btn-outline-info btn-lg">Patient</button>
-            </form>
+
+        <div class="homediv d-flex flex-column align-items-center flex-wrap">
+            <div class="p-2">
+                <div class="container2">
+                    <h2 class="title">
+                        <span class="title-word">Which</span>
+                        <span class="title-word">status</span>
+                        <span class="title-word">suits</span>
+                        <span class="title-word">you</span>
+                        <span class="title-word">best!</span>
+                    </h2>
+                </div>
+
+                <!-- <h3>Which status suits you best!?</h3> -->
+            </div>
+            <div class="p-2 d-flex flex-row flex-wrap">
+                <form action="doctorlogin" method="GET">
+                    <button type="submit" class="btn btn-outline-info btn-lg">Doctor</button>
+                </form>
+                <form action="patientlogin" method="GET">
+                    <button type="submit" class="btn btn-outline-success btn-lg">Patient</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="homediv d-flex flex-column align-items-center flex-wrap">
+            <div class="p-2">
+                <div class="container2">
+                    <h2 class="title">
+                        <span class="title-word">Our</span>
+                        <span class="title-word">Studies!</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="p-2 d-flex flex-row">
+                <form action="cancer" method="GET">
+                    <button type="submit" class="btn btn-outline-info btn-lg">Cancer</button>
+                </form>
+                <form action="diabetes" method="GET">
+                    <button type="submit" class="btn btn-outline-info btn-lg">Diabetes</button>
+                </form>
+                <form action="tuberculosis" method="GET">
+                    <button type="submit" class="btn btn-outline-success btn-lg">Tuberculosis</button>
+                </form>
+                <form action="malaria" method="GET">
+                    <button type="submit" class="btn btn-outline-success btn-lg">Malaria</button>
+                </form>
+            </div>
         </div>
     </div>
 
-    <div class="homediv d-flex flex-column align-items-center flex-wrap">
-        <div class="p-2">
-            <h3>Our Studies!</h3>
-        </div>
-        <div class="p-2 d-flex flex-row">
-            <form action="" method="GET">
-                <button type="submit" class="btn btn-outline-success btn-lg">Dia</button>
-            </form>
-            <form action="" method="GET">
-                <button type="submit" class="btn btn-outline-info btn-lg">Maleria</button>
-            </form>
+    <div class="responsive-container-block outer-container">
+        <div class="responsive-container-block inner-container">
+            <p class="text-blk section-head-text">
+                About Us
+            </p>
+            <p class="text-blk section-subhead-text">
+                This is our team
+            </p>
+            <div class="responsive-container-block">
+                <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+                    <div class="team-card">
+                        <div class="img-wrapper">
+
+                        </div>
+                        <p class="text-blk name">
+                            Naitik Patel
+                        </p>
+                        <p class="text-blk position">
+                            Back-End Developer
+                        </p>
+                        <div class="social-media-links">
+                            <a href="http://www.twitter.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+                            </a>
+                            <a href="http://www.facebook.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+                            </a>
+                            <a href="http://www.instagram.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+                            </a>
+                            <a href="http://www.github.com/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+                    <div class="team-card">
+                        <div class="img-wrapper">
+
+                        </div>
+                        <p class="text-blk name">
+                            Rajat Nai
+                        </p>
+                        <p class="text-blk position">
+                            Back-End Developer
+                        </p>
+                        <div class="social-media-links">
+                            <a href="http://www.twitter.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+                            </a>
+                            <a href="http://www.facebook.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+                            </a>
+                            <a href="http://www.instagram.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+                            </a>
+                            <a href="http://www.github.com/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+                    <div class="team-card">
+                        <div class="img-wrapper">
+
+                        </div>
+                        <p class="text-blk name">
+                            Dhruv Thakkar
+                        </p>
+                        <p class="text-blk position">
+                            Front-End Developer
+                        </p>
+                        <div class="social-media-links">
+                            <a href="http://www.twitter.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+                            </a>
+                            <a href="http://www.facebook.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+                            </a>
+                            <a href="http://www.instagram.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+                            </a>
+                            <a href="http://www.github.com/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
+                    <div class="team-card">
+                        <div class="img-wrapper">
+
+                        </div>
+                        <p class="text-blk name">
+                            Vansh Shah
+                        </p>
+                        <p class="text-blk position">
+                            Front-End Developer
+                        </p>
+                        <div class="social-media-links">
+                            <a href="http://www.twitter.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
+                            </a>
+                            <a href="http://www.facebook.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
+                            </a>
+                            <a href="http://www.instagram.com/" target="_blank">
+                                <img
+                                    src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
+                            </a>
+                            <a href="http://www.gmail.com/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
 
 
     <%-include('footer');-%>
