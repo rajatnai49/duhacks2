@@ -68,11 +68,11 @@ router.get('/patienthome', (req, res) => {
                     obj.Remarks = item.PrescriptionId.Remarks;
                     obj.DoctorSignature = item.PrescriptionId.DoctorSignature;
                 }
-                if (date1.getTime() > date2.getTime()) {
-                    futureappointment.push(obj);
-                } else {
-                    pastappointment.push(obj);
-                }
+                // if (date1.getTime() > date2.getTime()) {
+                futureappointment.push(obj);
+                // } else {
+                pastappointment.push(obj);
+                // }
             });
         }).catch((error) => {
             console.log(`Error From promise 1 a) ${error}`);
@@ -83,7 +83,8 @@ router.get('/patienthome', (req, res) => {
             data.pastappointment = pastappointment;
             data.user = req.user;
             console.log(result);
-            res.render('patienthome', { data });
+            return res.status(200).json(data);
+            // res.render('patienthome', { data });
         })
         .catch((error) => {
             console.log(`Error From promise 1 c) ${error}`);

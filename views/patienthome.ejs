@@ -42,17 +42,34 @@
             <div class="item">
                 <h6>All Appointment</h6>
                 <div>
-                    <form action="patienthome/show">
-                        <button type="submit" class="btn btn-secondary">Show</button>
-                    </form>
+                    <button onclick="showAppointment(this)" id="show" type="button"
+                        class="btn btn-secondary">Show</button>
                 </div>
-
             </div>
         </div>
     </div>
+
+    <div hidden id="appointment">
+        <h1>how</h1>
+    </div>
+
     <div class="d-flex justify-content-center">
         <a class="btn btn-primary" href="/patientlogout" role="button">Logout</a>
     </div>
+
+    <script>
+        function showAppointment(button) {
+            let element = document.getElementById("appointment");
+            let hidden = element.getAttribute("hidden");
+            if (hidden) {
+                element.removeAttribute("hidden");
+                button.innerText = "Hide";
+            } else {
+                element.setAttribute("hidden", "hidden");
+                button.innerText = "Show";
+            }
+        }
+    </script>
 
     <%- include('footer'); -%>
 </body>

@@ -31,3 +31,7 @@ button {
  .item {
     flex: 1;
  }
+
+ .hideappointment {
+   display: none;
+ }
